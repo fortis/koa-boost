@@ -6,8 +6,8 @@
   "license": "MIT",
   "main": "./index.js",
   "scripts": {
-    "test": "mocha --harmony test",
-    "watch": "mocha --harmony -w"
+    "test": "mocha test",
+    "watch": "mocha -w"
   },
   "keywords": [
     "koa",
@@ -34,6 +34,7 @@
     "mocha-junit-reporter": "^1.13.0",
     "sinon": "^2.3.2",
     "sinon-chai": "^2.10.0",
+    "standard": "^10.0.2",
     "supertest": "^3.0.0"
   }
 }
