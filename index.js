@@ -15,7 +15,6 @@ module.exports = function (options) {
   }
 
   return async function (ctx, next) {
-
     const boost = new Boost(ctx, configuration)
     const key = configuration.resolveKey(ctx)
     const match = boost.isMatch()
