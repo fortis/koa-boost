@@ -1,7 +1,5 @@
+/* global expect */
 'use strict'
-
-/* Testing toolkit. */
-const expect = require('chai').expect
 
 const requestTwice = (agent, testPath, firstRequestCb, secondRequestCb) => {
   agent.get(testPath)
