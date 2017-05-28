@@ -6,8 +6,8 @@
   "license": "MIT",
   "main": "./index.js",
   "scripts": {
-    "test": "mocha test",
-    "watch": "mocha -w"
+    "test": "mocha --harmony test",
+    "watch": "mocha --harmony -w"
   },
   "keywords": [
     "koa",
