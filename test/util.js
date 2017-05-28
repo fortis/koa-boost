@@ -3,10 +3,10 @@
 
 const requestTwice = (agent, testPath, firstRequestCb, secondRequestCb) => {
   agent.get(testPath)
-    .end(function (err, res) {
+    .end((err, res) => {
       firstRequestCb(err, res)
       agent.get(testPath)
-        .end(function (err, res) {
+        .end((err, res) => {
           secondRequestCb(err, res)
         })
     })
