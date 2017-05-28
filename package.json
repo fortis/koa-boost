@@ -1,0 +1,39 @@
+{
+  "name": "koa-boost",
+  "version": "1.0.0",
+  "description": "Cache middleware for koa",
+  "author": "Alan Bondarchuk <imacoda@gmail.com> (https://github.com/fortis)",
+  "license": "MIT",
+  "main": "./index.js",
+  "scripts": {
+    "test": "mocha test",
+    "watch": "mocha -w"
+  },
+  "keywords": [
+    "koa",
+    "middleware",
+    "rest",
+    "cache",
+    "koa-cache",
+    "koa-boost",
+    "boost",
+    "performance",
+    "koa",
+    "cache"
+  ],
+  "dependencies": {
+    "joi": "^10.5.0",
+    "micromatch": "^2.3.11",
+    "minimatch": "^3.0.4"
+  },
+  "devDependencies": {
+    "chai": "^4.0.0",
+    "koa": "^2.2.0",
+    "koa-router": "^7.2.0",
+    "mocha": "^3.4.2",
+    "mocha-junit-reporter": "^1.13.0",
+    "sinon": "^2.3.2",
+    "sinon-chai": "^2.10.0",
+    "supertest": "^3.0.0"
+  }
+}
