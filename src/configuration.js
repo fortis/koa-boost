@@ -2,8 +2,9 @@
 
 const Joi = require('joi')
 
-const STRATEGIES = {
-  IN_MEMORY: 'IN_MEMORY'
+const CacheProviders = {
+  APP: 'APP',
+  REDIS: 'REDIS'
 }
 
 /**
@@ -19,7 +20,7 @@ const schema = Joi.object().keys({
   maxLength: Joi.number().min(0),
   minLength: Joi.number().min(0),
   fromCacheOnly: Joi.boolean(),
-  strategy: Joi.any().allow(STRATEGIES.IN_MEMORY),
+  provider: Joi.any().allow(CacheProviders.APP),
   onError: Joi.func()
 })
 
@@ -39,13 +40,13 @@ class Configuration {
       maxLength: Infinity,
       minLength: 0,
       fromCacheOnly: false,
-      strategy: Configuration.strategies.IN_MEMORY,
+      provider: Configuration.CacheProviders.APP,
       onError: (ctx) => {}
     }
   }
 
-  static get strategies () {
-    return STRATEGIES
+  static get CacheProviders () {
+    return CacheProviders
   }
 
   constructor (options) {
