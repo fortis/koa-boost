@@ -13,10 +13,10 @@ npm install koa-boost --save
 
 ```js
 const Koa = require('koa')
-const koaBoost = require('../index')
+const boost = require('koa-boost')
 
 const app = new Koa()
-app.use(koaBoost({
+app.use(boost({
   pattern: '/api/*',
   ttl: 60 // 60 seconds
 }));
