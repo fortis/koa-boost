@@ -6,7 +6,8 @@
   "license": "MIT",
   "main": "./index.js",
   "scripts": {
-    "test": "mocha test",
+    "test": "nyc mocha test --timeout=3000",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "watch": "mocha -w"
   },
   "keywords": [
@@ -28,10 +29,13 @@
   },
   "devDependencies": {
     "chai": "^4.0.0",
+    "coveralls": "^2.13.1",
+    "istanbul": "^0.4.5",
     "koa": "^2.2.0",
     "koa-router": "^7.2.0",
     "mocha": "^3.4.2",
     "mocha-junit-reporter": "^1.13.0",
+    "nyc": "^10.3.2",
     "sinon": "^2.3.2",
     "sinon-chai": "^2.10.0",
     "standard": "^10.0.2",
