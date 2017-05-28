@@ -1,14 +1,10 @@
+/* global sinon expect it beforeEach describe */
 'use strict'
 
 const Koa = require('koa')
 const koaBoost = require('../index')
 
 /* Testing toolkit. */
-const expect = require('chai').expect
-const sinon = require('sinon')
-const it = require('mocha').it
-const beforeEach = require('mocha').beforeEach
-const describe = require('mocha').describe
 const request = require('supertest')
 const util = require('./util')
 
