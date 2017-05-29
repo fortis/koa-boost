@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>koa-boost - cache middleware for koa</title>
+
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,400italic|Merienda" rel="stylesheet" type="text/css" />
+    <link href="./stylesheets/index-239a9a0c.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body class="index">
+    <div class="container">
+      <header class="text-center">
+  <img src="./images/logo@3x-eb34f2b9.jpg" class="logo img-responsive block-center">
+  <h1>koa-boost</h1>
+  <h4>Cache middleware for Koa.</h4>
+  <h4></h4>
+<div class="highlight javascript"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7</pre></td><td class="code">
+    <pre>  <span class="kd">const</span> <span class="nx">Koa</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">require</span><span class="p">(</span><span class="na">'koa'</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="nx">boost</span> <span class="p">=</span> <span class="nx">require</span><span class="p">(</span><span class="na">'koa-boost'</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="nx">app</span> <span class="p">=</span> <span class="k">new</span> <span class="nx">Koa</span> <span class="p">(</span><span class="p">)</span>
+  <span class="nx">app</span><span class="p">.</span><span class="k">use</span><span class="p">(</span><span class="k">boost</span><span class="p">(</span><span class="p">{</span>
+    <span class="nx">pattern</span><span class="w">:</span> <span class="sx">'/api/*'</span>,
+    <span class="nx">ttl</span><span class="w">:</span> <span class="sx">60</span> <span class="p">// 60 seconds</span>
+  <span class="p">}</span><span class="p">)</span><span class="p">)</span>
+</pre>
+</td></tr></tbody></table>
+</div>
+</header>
+
+<nav>
+  <ul>
+    <li>
+      <a href="https://github.com/fortis/koa-boost">Github</a>
+    </li>
+    <li>
+      <a href="/guides/getting-started">Quick Start</a>
+    </li>
+    <li>
+      <a href="/guides">Guides</a>
+    </li>
+  </ul>
+</nav>
+
+<section>
+  <h2 class="text-center">Features</h2>
+
+	<div class="container features">
+		<div class="row">
+			<div class="five columns">
+				<h4>xxx <span class="badge">yyy</span></h4>
+				<p>
+                    Shrimpfish ghost knifefish golden dojo telescopefish Sacramento splittail gurnard goosefish Japanese eel. Tetra; snake eel bichir blue triggerfish, grunt dhufish hammerhead shark; longnose sucker, staghorn sculpin halfbeak northern pike, electric stargazer. Zebra pleco featherback inanga, "clown triggerfish catfish," river stingray anglerfish Lost River sucker ricefish tilapia. Milkfish lamprey dealfish stoneroller minnow french angelfish velvet catfish.
+				</p>
+			</div>
+
+			<div class="five columns">
+				<h4>xxx</h4>
+				<p>
+                    Dartfish: Red whalefish gizzard shad Blind goby livebearer jawfish crucian carp spiny-back. Rainbow trout pencilsmelt firefish; mackerel shark yellowfin surgeonfish stargazer, sea toad. Yellow-edged moray boxfish catfish California smoothtongue European flounder sprat channel catfish shad minnow barbeled houndshark. Dwarf gourami waryfish European chub. Blind shark driftwood catfish crevice kelpfish Ganges shark.
+				</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="five columns">
+				<h4>xxx</h4>
+				<p>
+                    Tripletail, "North Pacific daggertooth kelpfish grunt white croaker powen combfish pickerel Death Valley pupfish mackerel shark." Bigscale cookie-cutter shark Ganges shark spotted danio chimaera, lemon shark yellowtail kingfish four-eyed fish. Sarcastic fringehead spadefish longnose whiptail catfish lumpsucker, frogfish? Mullet scat eagle ray snubnose parasitic eel squeaker, monkeyface prickleback alligatorfish cavefish kaluga nurseryfish Pacific viperfish slickhead midshipman croaker yellowfin surgeonfish.
+				</p>
+			</div>
+
+			<div class="five columns">
+				<h4>xxx</h4>
+				<p>
+                    Zander flagfin dogfish skilfish Mozambique tilapia deepwater stingray tench longneck eel? Atlantic cod, "lemon sole tilefish catla northern lampfish barbelless catfish." Nase, lemon shark: barbel kanyu grayling crocodile shark sandroller spaghetti eel; warty angler. Southern Dolly Varden, skate temperate ocean-bass, telescopefish squaretail; dogfish herring, beachsalmon deep sea smelt. Ronquil flyingfish airsac catfish croaker neon tetra. Thornfish righteye flounder Owens pupfish, ghost knifefish Owens pupfish.
+				</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="five columns">
+				<h4>xxx</h4>
+				<p>
+                    Southern Dolly Varden, skate temperate ocean-bass, telescopefish squaretail; dogfish herring, beachsalmon deep sea smelt. Ronquil flyingfish airsac catfish croaker neon tetra. Thornfish righteye flounder Owens pupfish, ghost knifefish Owens pupfish.
+				</p>
+			</div>
+
+			<div class="five columns">
+				<h4>Full test coverage</h4>
+				<p>
+					Every bit of koa-boost functionality is tested. Just as main codebase, tests are easy to read and understand.
+					If you don't believe it, check it yourself by running <b>npm test</b> after cloning the repository.
+				</p>
+			</div>
+		</div>
+
+		<div class="row">
+		  <div class="five columns">
+		    <h4>xxx</h4>
+		    <p>
+                Sandroller tarwhine poolfish dwarf gourami, frogfish rivuline righteye flounder riffle dace three spot gourami. Horn shark manefish, spiny dogfish; croaker electric catfish. Rudderfish bigmouth buffalo Blind goby walu longnose lancetfish Cherubfish char cavefish long-whiskered catfish chub grideye."
+		  </div>
+
+		  <div class="five columns">
+		    <p class="coming-soon">
+		      More features coming soon.
+		      Open a <a href="https://github.com/fortis/koa-boost/issues" target="_blank">github issue</a> if you have suggestions.
+		    </p>
+		  </div>
+		</div>
+	</div>
+</section>
+
+<section>
+  <h2 class="text-center">Try it out!</h2>
+  <p>
+    koa-boost is very easy to use.
+    To get you started, I wrote a <a href="/guides/getting-started">quick tutorial</a>, where you will ....
+    There are also <b>non-boring</b> <a href="/guides">guides</a> available, if you decided to use koa-boost in your projects.
+  </p>
+
+  <blockquote class="warning">
+    <label>Warning</label>
+      <p>Make sure you've got <a href="https://github.com/koajs/koa">Koa2</a></p>
+  </blockquote>
+</section>
+
+<section>
+  <h2 class="text-center">Show some <i class="icon icon-heart"></i></h2>
+  <p class="text-center">Yes, that's all it takes! Tweet, follow and star it on GitHub!</p>
+
+  <ol class="sharing">
+    <li>
+      <a class="twitter-share-button"
+          data-text="Check out Mongorito, new MongoDB library for Node.js based on ES6 generators, which means no callbacks or promises!"
+          data-url="http://mongorito.com"
+          data-related="vdemedes"
+          href="https://twitter.com/share">Tweet</a>
+    </li>
+    <li>
+			<a href="https://twitter.com/alan_bondarchuk" class="twitter-follow-button" data-show-count="false">Follow @alan_bondarchuk</a>
+	  </li>
+	  <li>
+			<iframe src="http://ghbtns.com/github-btn.html?user=fortis&repo=koa-boost&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+	  </li>
+	</ol>
+</section>
+
+<script>
+window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+</script>
+
+      <footer>Made by <a href="https://twitter.com/alan_bondarchuk" target="_blank">Alan Bondarchuk</a></footer>
+    </div>
+
+  </body>
+</html>
