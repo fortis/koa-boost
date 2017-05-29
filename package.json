@@ -1,6 +1,6 @@
 {
   "name": "koa-boost",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Cache middleware for koa",
   "author": "Alan Bondarchuk <imacoda@gmail.com> (https://github.com/fortis)",
   "license": "MIT",
