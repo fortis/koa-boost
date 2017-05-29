@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/fortis/koa-boost.svg?branch=master)](https://travis-ci.org/fortis/koa-boost)
 [![Coverage Status](https://coveralls.io/repos/github/fortis/koa-boost/badge.svg)](https://coveralls.io/github/fortis/koa-boost)
 
-Caching middleware for [koa](https://github.com/koajs/koa). It stores the responses matching a given pattern.
+Cache middleware for [koa](https://github.com/koajs/koa). It stores the responses matching a given pattern.
 
 ## Installation
 
