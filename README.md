@@ -12,12 +12,28 @@ npm install koa-boost --save
 
 ## Usage
 
+##### Cache in Application Memory
 ```js
 const Koa = require('koa')
 const boost = require('koa-boost')
 
 const app = new Koa()
 app.use(boost({
+  pattern: '/api/*',
+  ttl: 60 // 60 seconds
+}));
+```
+
+##### Use Redis as Cache Provider
+```js
+const Koa = require('koa')
+const boost = require('koa-boost')
+const Redis = require('ioredis')
+
+const app = new Koa()
+const redis = new Redis()
+app.use(boost({
+  provider: redis,
   pattern: '/api/*',
   ttl: 60 // 60 seconds
 }));
