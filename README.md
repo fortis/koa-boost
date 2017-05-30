@@ -1,8 +1,13 @@
 # koa-boost
-[![Build Status](https://travis-ci.org/fortis/koa-boost.svg?branch=master)](https://travis-ci.org/fortis/koa-boost)
-[![Coverage Status](https://coveralls.io/repos/github/fortis/koa-boost/badge.svg)](https://coveralls.io/github/fortis/koa-boost)
 
-Cache middleware for [koa](https://github.com/koajs/koa). It stores the responses matching a given pattern.
+<p align="center">
+  <a href="https://travis-ci.org/fortis/koa-boost"><img src="https://travis-ci.org/fortis/koa-boost.svg?branch=master" alt="travis-ci status"></a>
+  <a href="https://coveralls.io/github/fortis/koa-boost"><img src="https://coveralls.io/repos/github/fortis/koa-boost/badge.svg" alt="coverage status"></a>
+  <a href="https://www.npmjs.com/package/koa-boost"><img src="https://img.shields.io/npm/v/koa-boost.svg" alt="npm version"></a>
+  <a href="https://standardjs.com"><img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="Standard - JavaScript Style Guide"></a>
+</p>
+
+Cache middleware for [koa](https://github.com/koajs/koa).
 
 ## Installation
 
