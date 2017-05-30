@@ -12,7 +12,7 @@ npm install koa-boost --save
 
 ## Usage
 
-##### Cache in Application Memory
+##### Store Cache in Application Memory
 ```js
 const Koa = require('koa')
 const boost = require('koa-boost')
