@@ -1,7 +1,10 @@
 'use strict'
 
-class Storage {
+const BaseProvider = require('./base')
+
+class AppProvider extends BaseProvider {
   constructor () {
+    super()
     this.data = {}
   }
 
@@ -27,4 +30,4 @@ class Storage {
   }
 }
 
-module.exports = Storage
+module.exports = AppProvider

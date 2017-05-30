@@ -2,11 +2,6 @@
 
 const Joi = require('joi')
 
-const CacheProviders = {
-  APP: 'APP',
-  REDIS: 'REDIS'
-}
-
 /**
  * Validation schema.
  */
@@ -20,7 +15,7 @@ const schema = Joi.object().keys({
   maxLength: Joi.number().min(0),
   minLength: Joi.number().min(0),
   fromCacheOnly: Joi.boolean(),
-  provider: Joi.any().allow(CacheProviders.APP),
+  provider: [Joi.allow(null), Joi.object()],
   onError: Joi.func()
 })
 
@@ -40,13 +35,9 @@ class Configuration {
       maxLength: Infinity,
       minLength: 0,
       fromCacheOnly: false,
-      provider: Configuration.CacheProviders.APP,
+      provider: null,
       onError: (ctx) => {}
     }
-  }
-
-  static get CacheProviders () {
-    return CacheProviders
   }
 
   constructor (options) {
@@ -70,12 +61,16 @@ class Configuration {
     return this.options.fromCacheOnly
   }
 
-  get cacheableStatuses () {
+  get statuses () {
     return this.options.statuses
   }
 
-  getPattern () {
+  get pattern () {
     return this.options.pattern
+  }
+
+  get provider () {
+    return this.options.provider
   }
 
   onError (ctx) { return this.options.onError(ctx) }
