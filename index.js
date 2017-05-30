@@ -1,53 +1,77 @@
 'use strict'
 
+const micromatch = require('micromatch')
 const Configuration = require('./src/configuration')
-const Storage = require('./src/storage')
-const Boost = require('./src/boost')
+const Storage = require('./src/service/storage')
 
 module.exports = function (options) {
   let configuration
-  let cacheStorage
+  let storage
+
   try {
     configuration = new Configuration(options)
-    cacheStorage = new Storage()
+    storage = new Storage(configuration.provider)
   } catch (err) {
     throw err
   }
 
   return async function (ctx, next) {
-    const boost = new Boost(ctx, configuration)
     const key = configuration.resolveKey(ctx)
-    const match = boost.isMatch()
-
+    const match = patternMatchPath(configuration.pattern, ctx.request.path)
     try {
-      if (boost.method !== 'GET' || !match) {
+      if (!match || ctx.method !== 'GET') {
         await next()
         return null
       }
 
-      if (match && cacheStorage.get(key)) {
-        ctx.body = cacheStorage.get(key)
-        ctx.boost = true
+      let cached = await storage.get(key)
+      const isPromise = Promise.resolve(cached) === cached
+
+      if (match && cached && !isPromise) {
+        ctx.body = cached.body
+        ctx.status = cached.status
+        ctx.set('Content-Type', cached.type)
         ctx.set('X-Boost', 'HIT')
-        ctx.status = 200
         return null
       } else if (match && configuration.fromCacheOnly) {
         ctx.throw('Not found in cache', 404)
       }
 
+      ctx.set('X-Boost', 'MISS')
       await next()
 
-      ctx.boost = false
-      ctx.set('X-Boost', 'MISS')
-      if (boost.isCacheableStatus(ctx.status) && match && ctx.body) {
-        cacheStorage.set(key, ctx.body, configuration.ttl)
+      if (match && ctx.body && configuration.statuses.indexOf(ctx.status) !== -1) {
+        storage.set(key, {
+          body: ctx.body,
+          status: ctx.status,
+          type: ctx.request.type
+        }, configuration.ttl)
       }
     } catch (err) {
-      ctx.boost = false
       ctx.set('X-Boost', 'MISS')
       configuration.onError(ctx)
 
       throw err
     }
   }
+}
+
+const patternMatchPath = (pattern, path) => {
+  if (!pattern) {
+    return true
+  }
+
+  const isString = (object) => {
+    return typeof object === 'string' || object instanceof String
+  }
+
+  if (isString(pattern)) {
+    return micromatch.isMatch(path, pattern)
+  }
+
+  if (pattern instanceof Array) {
+    return micromatch.any(path, pattern)
+  }
+
+  return false
 }
