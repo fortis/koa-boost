@@ -2,7 +2,7 @@
 'use strict'
 
 const Koa = require('koa')
-const koaBoost = require('../index')
+const boost = require('../index')
 
 /* Testing toolkit. */
 const request = require('supertest')
@@ -18,7 +18,7 @@ describe('default options', () => {
       this.body = {path: this.request.path}
     })
 
-    app.use(koaBoost())
+    app.use(boost())
     app.use(async ctx => {
       spy.bind(ctx)(ctx.request.path)
     })

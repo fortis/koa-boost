@@ -2,7 +2,7 @@
 'use strict'
 
 const Koa = require('koa')
-const koaBoost = require('../index')
+const boost = require('../index')
 
 /* Testing toolkit. */
 const request = require('supertest')
@@ -24,7 +24,7 @@ describe('patterns', () => {
   })
 
   it('should match all if no patterns present', () => {
-    app.use(koaBoost({}))
+    app.use(boost({}))
     app.use(spyMiddleware)
 
     const agent = request(app.callback())
@@ -38,7 +38,7 @@ describe('patterns', () => {
   })
 
   it('should match a given pattern string', () => {
-    app.use(koaBoost({
+    app.use(boost({
       pattern: '/api/**/*'
     }))
     app.use(spyMiddleware)
@@ -58,7 +58,7 @@ describe('patterns', () => {
   })
 
   it('should match all patterns in a given pattern array', () => {
-    app.use(koaBoost({
+    app.use(boost({
       pattern: [
         '/api',
         '/api/v1/**/*',
@@ -81,11 +81,11 @@ describe('patterns', () => {
   })
 
   it('should throw an error if not an expected type', () => {
-    expect(() => koaBoost({
+    expect(() => boost({
       pattern: {}
     })).to.throw()
 
-    expect(() => koaBoost({
+    expect(() => boost({
       pattern: ['/api/user', {}]
     })).to.throw()
   })
