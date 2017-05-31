@@ -1,5 +1,7 @@
 # koa-boost
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/fortis/koa-boost.svg)](https://greenkeeper.io/)
+
 <p align="center">
   <a href="https://travis-ci.org/fortis/koa-boost"><img src="https://travis-ci.org/fortis/koa-boost.svg?branch=master" alt="travis-ci status"></a>
   <a href="https://coveralls.io/github/fortis/koa-boost"><img src="https://coveralls.io/repos/github/fortis/koa-boost/badge.svg" alt="coverage status"></a>
