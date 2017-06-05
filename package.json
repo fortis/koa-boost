@@ -38,7 +38,7 @@
     "koa": "^2.2.0",
     "mocha": "^3.4.2",
     "mocha-junit-reporter": "^1.13.0",
-    "nyc": "^10.3.2",
+    "nyc": "^11.0.1",
     "sinon": "^2.3.2",
     "sinon-chai": "^2.10.0",
     "standard": "^10.0.2",
