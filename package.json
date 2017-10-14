@@ -27,7 +27,7 @@
     "url": "https://github.com/fortis/koa-boost"
   },
   "dependencies": {
-    "joi": "^11.1.0",
+    "joi": "^13.0.0",
     "micromatch": "^3.0.1"
   },
   "devDependencies": {
